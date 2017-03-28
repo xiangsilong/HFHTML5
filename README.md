@@ -53,3 +53,22 @@ function showPosition(position) {
     console.log(latitude + "_" + longitude);
 }
 ```
+
+Adding map to the page. At the June of 2016 Google turn of access to Google Maps API without API key. Instead Google Maps API I use Yandex Maps API, it is similar API.
+How to use it:
+1. Add API reference at the head tag as script.
+2. Create a container for map with width and height
+3. Create a map object, for made it use constructor which accept id name of container and map options.
+
+In your html file.
+```
+<script src="link to the API"></script>
+```
+
+In your js file.
+```
+function showMap(coords) {
+	var map = new ymaps.Map("map",
+    					{center:[coords.latitude, coords.longitude], zoom: 11});
+}
+```
