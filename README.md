@@ -72,3 +72,11 @@ function showMap(coords) {
     					{center:[coords.latitude, coords.longitude], zoom: 11});
 }
 ```
+If you want add placemark on the cart use next code. Coords specify point on the map which will marked, hintContent describe hint for user and balloonContent showing when user click on the marker.
+```
+function addPlacemark(coords, hintContent, balloonContent) {
+	var placemark = new ymaps.Placemark([coords.latitude, coords.longitude],
+    {hintContent: hintContent, balloonContent: balloonContent});
+    myMap.geoObjects.add(placemark);
+}
+```

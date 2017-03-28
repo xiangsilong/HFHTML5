@@ -21,4 +21,10 @@ function showMap(coords) {
             center: [coords.latitude, coords.longitude],
             zoom: 15
         });
+  placeMark(coords);
+}
+
+function placeMark(coords) {
+  var placeMark = new ymaps.Placemark([coords.latitude, coords.longitude], {hintContent: 'It is my place', balloonContent:'Home'});
+  myMap.geoObjects.add(placeMark);
 }
