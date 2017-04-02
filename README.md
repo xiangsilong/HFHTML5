@@ -80,3 +80,60 @@ function addPlacemark(coords, hintContent, balloonContent) {
     myMap.geoObjects.add(placemark);
 }
 ```
+Also Geolocation API provide method which calls when position of user is changed.
+```
+var id = navigator.geolocation.watchPosition(showCurrent, error, options);
+```
+showCurrent - it is callback function, calls when position get, error callback determine what to do if happened some errors. And option, it is provide configuration for accuracy, timeout of location, and maximumAge for position.
+
+And the end of the work with geolocation API, you should clear location store by call next method.
+```
+navigator.geolocation.clearWatch(id);
+```
+# Chapter 6. Ajax and JSON
+If you develop app in pure JavaScript, not user jQuery or other third party libraries. For request to the server you use `XmlHttpRequest`. But it class have a politic privacy that say us that we do not interact with other resources has different domain from us domain.
+For fix this bug people use callback wrapper, is very ugly. I don't know left it at the current version of JS. And for example piece of code to interact with server.
+```
+window.onload = function() {
+ var url = "https://some.api.com/";
+ var request = new XMLHttpRequest();
+ request.open("GET", url);
+ request.onload = function() {
+  if(request.status == 200) {
+     //at this moment we have access send to us by server
+     console.log(request.responseText);
+  }
+ }
+}
+```
+For communicate between services exist two mechanims - first across JSON, and the second - across XML. At this moment JSON more popular that XML. JSON it is acronym for Java Script Object Notation. Example of JSON:
+```
+[
+  {
+    "_id": "58e158ff85b066075b20ac8d",
+    "index": 1,
+    "guid": "e1d40d10-f07a-416e-a98d-7b32f8fe421a",
+    "isActive": false,
+    "balance": "$2,045.01",
+    "picture": "http://placehold.it/32x32",
+    "age": 31,
+    "eyeColor": "blue",
+    "name": "Hays Hensley",
+    "gender": "male",
+    "company": "CORECOM",
+    "email": "hayshensley@corec"
+  }
+]
+```
+
+For work with JSON in Java Script exist JSON object which provide next method `stringify`, `parse`. How see first convert object into json string, another parse json string and return java script object.
+For execution some task at the interval in the JS exist next method.
+```
+setInterval(300, someUpdate);
+```
+In come cases when you need to replace some element. You should use next method.
+```
+var head = document.getElementsByTag("head")[0]; //Get head of the page.
+head.replaceChild(newElement, oldElement); //Remove old element and insert new element.
+```
+# Chapter 7. Canvas
