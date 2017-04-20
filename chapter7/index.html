@@ -1,0 +1,36 @@
+<!doctype html>
+<head>
+  <title>Canvas Hello World</title>
+  <meta charset="utf-8" />
+  <script src="js/index.js"></script>
+</head>
+<body>
+  <canvas width="600" height="400" id="paper" style="border:1px solid">
+    <p>If you see it, please update your browser</p>
+  </canvas>
+  <form>
+    <p>
+     <label for="bgcolor">Backgroung color:</label><br />
+     <select id="bgcolor">
+       <option value="Black">Black</option>
+       <option value="White">White</option>
+     </select>
+  </p>
+  <p>
+     <label for="shape">Shape:</label><br />
+     <select id="shape">
+       <option value="circle">circle</option>
+       <option value="square">square</option>
+     </select>
+  </p>
+  <p>
+     <label for="textcolor">Text color:</label><br />
+     <select id="textcolor">
+       <option value="white">White</option>
+       <option value="black">Black</option>
+   </select>
+ </p>
+  <input type="submit" value="Preview" id="previewButton"/>
+  </form>
+</body>
+</html>
